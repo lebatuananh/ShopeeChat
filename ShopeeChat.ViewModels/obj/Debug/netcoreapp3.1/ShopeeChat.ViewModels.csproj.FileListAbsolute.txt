@@ -1,0 +1,9 @@
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/bin/Debug/netcoreapp3.1/ShopeeChat.ViewModels.deps.json
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/bin/Debug/netcoreapp3.1/ShopeeChat.ViewModels.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/bin/Debug/netcoreapp3.1/ShopeeChat.ViewModels.pdb
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/obj/Debug/netcoreapp3.1/ShopeeChat.ViewModels.csprojAssemblyReference.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/obj/Debug/netcoreapp3.1/ShopeeChat.ViewModels.AssemblyInfoInputs.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/obj/Debug/netcoreapp3.1/ShopeeChat.ViewModels.AssemblyInfo.cs
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/obj/Debug/netcoreapp3.1/ShopeeChat.ViewModels.csproj.CoreCompileInputs.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/obj/Debug/netcoreapp3.1/ShopeeChat.ViewModels.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.ViewModels/obj/Debug/netcoreapp3.1/ShopeeChat.ViewModels.pdb

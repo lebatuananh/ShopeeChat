@@ -1,0 +1,66 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.Demo.WebApplication/ShopeeChat.Demo.WebApplication.csproj",
+    "projectName": "ShopeeChat.Demo.WebApplication",
+    "projectPath": "/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.Demo.WebApplication/ShopeeChat.Demo.WebApplication.csproj",
+    "outputPath": "/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.Demo.WebApplication/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp3.1"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "projectReferences": {
+          "/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/ShopeeChat.CoreAPI.csproj": {
+            "projectPath": "/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/ShopeeChat.CoreAPI.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+          "target": "Package",
+          "version": "[3.1.4, )"
+        },
+        "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+          "target": "Package",
+          "version": "[1.10.9, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "frameworkReferences": {
+        "Microsoft.AspNetCore.App": {
+          "privateAssets": "none"
+        },
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.301/RuntimeIdentifierGraph.json"
+    }
+  }
+}

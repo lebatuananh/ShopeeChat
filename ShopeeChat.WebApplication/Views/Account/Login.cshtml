@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+@model ShopeeChat.RestClient.Models.Requests.UserSystemLoginRequest
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chitchat - chat messenger html templlete</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Chitchat">
+    <meta name="keywords" content="Chitchat">
+    <meta name="author" content="Chitchat">
+    <link rel="icon" href="/assets/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="screen" id="color">
+</head>
+<body>
+    <div class="login-page2 animat-rate">
+        <div class="login-content-main">
+            <div class="login-content2">
+                <div class="theme-tab">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" id="login-tab" data-toggle="tab" href="login-2.html" role="tab" aria-selected="false">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="signup-tab" data-toggle="tab" href="signup-2.html" role="tab" aria-selected="true">Signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login-content">
+                <div class="login-content-header">
+                    <img class="img-fluid" src="/assets/images/logo/landing-logo.png" alt="images">
+                </div>
+                <h3>Hello Everyone , We are Chitchat</h3>
+                <h4>Wellcome to chitchat please, login to your account.</h4>
+                <form asp-controller="Account" asp-action="Login" class="form2" method="post">
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputEmail3">Tên đăng nhập</label>
+                        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", placeholder = "Tên đăng nhập" })
+                        <span class="error">@Html.ValidationMessageFor(x => x.UserName)</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputPassword3">Mật khẩu</label><span> </span>
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Tên đăng nhập" })
+                        <span class="error">@Html.ValidationMessageFor(x => x.Password)</span>
+                    </div>
+                    <div id="lblMessage"></div>
+                    <div class="form-group mb-0">
+                        <div class="buttons">
+                            <button type="submit" class="btn button-effect btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

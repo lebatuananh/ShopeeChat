@@ -1,0 +1,12 @@
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/bin/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.deps.json
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/bin/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/bin/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.pdb
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/bin/Debug/netcoreapp3.1/ShopeeChat.Infrastructure.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/bin/Debug/netcoreapp3.1/ShopeeChat.Infrastructure.pdb
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.csprojAssemblyReference.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.AssemblyInfoInputs.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.AssemblyInfo.cs
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.csproj.CoreCompileInputs.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.csproj.CopyComplete
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.CoreAPI/obj/Debug/netcoreapp3.1/ShopeeChat.CoreAPI.pdb

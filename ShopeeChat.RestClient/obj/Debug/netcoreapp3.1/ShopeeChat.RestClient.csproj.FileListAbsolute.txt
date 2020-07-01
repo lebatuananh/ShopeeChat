@@ -1,0 +1,14 @@
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.RestClient.deps.json
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.RestClient.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.RestClient.pdb
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.Infrastructure.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.Infrastructure.pdb
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.csprojAssemblyReference.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.AssemblyInfoInputs.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.AssemblyInfo.cs
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.csproj.CoreCompileInputs.cache
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.csproj.CopyComplete
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/obj/Debug/netcoreapp3.1/ShopeeChat.RestClient.pdb
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.CoreApplication.dll
+/home/lebatuananh/Documents/Project/ProjectOutSource/ShopeeChat/ShopeeChat.RestClient/bin/Debug/netcoreapp3.1/ShopeeChat.CoreApplication.pdb
