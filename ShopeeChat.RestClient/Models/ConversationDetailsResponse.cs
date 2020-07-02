@@ -53,5 +53,13 @@ namespace ShopeeChat.RestClient.Models
     public class Content
     {
         public string Text { get; set; }
+
+        public string StickerId { get; set; }
+
+        public string StickerPackageId { get; set; }
+
+        public string StickerUrl { get; set; }
+
+        public string Url { get; set; }
     }
 }

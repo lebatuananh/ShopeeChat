@@ -6,7 +6,7 @@ namespace ShopeeChat.CoreApplication.Configurations
         public string Address { get; set; }
         public int TimeoutInMilliseconds { get; set; }
         public ApiUrls Urls { get; set; }
-
+        public string[] StickerUrls { get; set; }
         public ApiConfiguration()
         {
             ClientId = "";
@@ -25,8 +25,7 @@ namespace ShopeeChat.CoreApplication.Configurations
         public string PathApiClientSyncConversations { get; set; }
         public string PathApiClientSendChatMessage { get; set; }
         public string PathApiClientGetNewMessage { get; set; }
-
-
+        public string PathApiClientUploadImage { get; set; }
         public string PathApiClientUserSystemLogin { get; set; }
         public string PathApiClientUserSystemRegister { get; set; }
         public string PathApiClientUserSystemForgotPassword { get; set; }

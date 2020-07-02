@@ -9,6 +9,7 @@ namespace ShopeeChat.RestClient.Repositories.Interfaces
     {
         protected ApiClient ApiClient;
         protected ApiUrls ApiUrls = ApplicationStaticVariables.ApiConfig.Urls;
+        protected string[] StickerUrls = ApplicationStaticVariables.ApiConfig.StickerUrls;
 
         public BaseRepository(ApiClient apiClient)
         {

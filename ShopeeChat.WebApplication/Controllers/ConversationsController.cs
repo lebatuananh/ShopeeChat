@@ -4,16 +4,18 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopeeChat.CoreAPI.RestClientShopee.Models;
 using ShopeeChat.Infrastructure.Extensions;
 using ShopeeChat.RestClient.Models;
 using ShopeeChat.RestClient.Repositories.Interfaces;
+using ShopeeChat.WebApplication.Helper;
 using ShopeeChat.WebApplication.Models;
 
 namespace ShopeeChat.WebApplication.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ConversationsController : Controller
     {
         private readonly IConversationsRepository _conversationsRepository;
@@ -29,10 +31,12 @@ namespace ShopeeChat.WebApplication.Controllers
         {
 
             var conversations = await _conversationsRepository.GetAllConversation();
+            var stickers = await _conversationsRepository.GetStickers();
             var conversationDetails = new List<ConversationDetailsResponse>();
             var result = new ConversationsViewModel()
             {
-                ConversationResponses = conversations
+                ConversationResponses = conversations,
+                Stickers = stickers
             };
             if (conversationId == null)
             {
@@ -76,6 +80,32 @@ namespace ShopeeChat.WebApplication.Controllers
         {
             var result = await _conversationsRepository.GetNewMessage();
             return result;
+        }
+
+        [HttpPost]
+        [ValidateMultipartContent]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    Error = new
+                    {
+                        Message = "Tệp tải lên không hợp lệ"
+                    }
+                });
+            }
+            if (file.Length > 2 * 1024 * 1024)
+            {
+                return BadRequest("Không thể tải ảnh lên do dung lượng vượt quá 2MB");
+            }
+            if (!file.ContentType.Contains("image/"))
+            {
+                return BadRequest("Không thể tải ảnh lên do ảnh không đúng định dạng");
+            }
+            var result = await _conversationsRepository.UploadImage(file);
+            return Ok(result);
         }
     }
 }
