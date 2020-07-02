@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using ShopeeChat.RestClient.Models;
 using ShopeeChat.RestClient.Models.Base;
@@ -45,13 +48,21 @@ namespace ShopeeChat.RestClient.RestClients
             return request;
         }
 
-        public virtual void SetRequestBody(HttpRequestMessage requestMessage, object obj)
+        public virtual void SetRequestBody(HttpRequestMessage requestMessage, object obj, IFormFile file = null)
         {
             if (obj != null)
             {
                 var test = Serialize(obj);
                 requestMessage.Content = new StringContent(Serialize(obj), Encoding.UTF8, "application/json");
 
+            }
+            if (file != null)
+            {
+                byte[] data;
+                using (var br = new BinaryReader(file.OpenReadStream()))
+                    data = br.ReadBytes((int)file.OpenReadStream().Length);
+                ByteArrayContent bytes = new ByteArrayContent(data);
+                requestMessage.Content = new MultipartFormDataContent { { bytes, "formFile", file.FileName } };
             }
         }
 
@@ -64,10 +75,10 @@ namespace ShopeeChat.RestClient.RestClients
             return Deserialize<T>(bodyText);
         }
 
-        public async Task<T> PostAsync<T>(string path, object obj, Dictionary<string, string> queries = null)
+        public async Task<T> PostAsync<T>(string path, object obj, Dictionary<string, string> queries = null, IFormFile file = null)
         {
             var requestMessage = InitRequest(HttpMethod.Post, path, queries);
-            SetRequestBody(requestMessage, obj);
+            SetRequestBody(requestMessage, obj, file);
             var responseMessage = await SendAsync(requestMessage);
             await PreprocessResponse(responseMessage);
             string bodyText = await responseMessage.Content.ReadAsStringAsync();

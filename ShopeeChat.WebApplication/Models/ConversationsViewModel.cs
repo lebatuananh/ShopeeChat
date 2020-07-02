@@ -16,5 +16,6 @@ namespace ShopeeChat.WebApplication.Models
         public string NameSeller { get; set; }
         public int SellerId { get; set; }
         public int RequestId { get; set; }
+        public IList<string> Stickers { get; set; }
     }
 }

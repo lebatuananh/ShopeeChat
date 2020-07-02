@@ -76,5 +76,14 @@ namespace ShopeeChat.CoreAPI.RestClientShopee.Models
     {
         [JsonProperty("text")]
         public string Text { get; set; }
+
+        [JsonProperty("sticker_id")]
+        public string StickerId { get; set; }
+
+        [JsonProperty("sticker_package_id")]
+        public string StickerPackageId { get; set; }
+
+        [JsonProperty("url")]
+        public string Url { get; set; }
     }
 }

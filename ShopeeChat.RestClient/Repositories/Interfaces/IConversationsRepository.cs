@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ShopeeChat.CoreAPI.RestClientShopee.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopeeChat.RestClient.Repositories.Interfaces
 {
@@ -15,6 +16,7 @@ namespace ShopeeChat.RestClient.Repositories.Interfaces
         Task<ResultConversationSyncResponse> SyncConversations();
         Task<object> SendChatMessage(ChatMessageRequest chatMessageRequest);
         Task<List<NewMessageResponse>> GetNewMessage();
-
+        Task<IList<string>> GetStickers();
+        Task<UploadResponse> UploadImage(IFormFile file);
     }
 }

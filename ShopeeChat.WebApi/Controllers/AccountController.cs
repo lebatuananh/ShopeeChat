@@ -33,7 +33,7 @@ namespace ShopeeChat.WebApi.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(AccountLoginModel request)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email);
+            var user = await _userManager.FindByNameAsync(request.UserName);
             if (user != null)
             {
                 var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);

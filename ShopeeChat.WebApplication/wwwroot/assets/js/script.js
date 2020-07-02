@@ -741,24 +741,50 @@
             }
         });
     };
-    
+
+    function sendSticker(sticker) {
+        var url = sticker.attr('src');
+        var data = {
+            requestId: "d98346a5-7385-45ba-8944-b80ab307e446",
+            toId: $('#toId').val(),
+            type: "sticker",
+            content: {
+                stickerId: url.split('/')[7].split('@')[0],
+                stickerPackageId: url.split('/')[6]
+            },
+            chatSendOption: {
+                forceSendCancelOrderWarning: false,
+                complyCancelOrderWarning: false
+            },
+            source: "minichat"
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Conversations/SendMessage",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            cache: false,
+            success: function (response) {
+                $('<li class="replies"> <div class="media"> <div class="profile mr-4 bg-size" style="background-image: url(&quot;/assets/images/contact/1.jpg&quot;); background-size: cover; background-position: center center;"></div><div class="media-body"> <div class="contact-name"> <h5>Alan josheph</h5> <h6>01:42 AM</h6> <ul class="msg-box"> <li> <h5>' + sticker.parent().html() + '</h5> </li></ul> </div></div></div></li>').appendTo($('.messages .chatappend'));
+                $('.chat-main .active .details h6').html('<span>You : </span>' + sticker.parent().html());
+                $(".messages").animate({
+                    scrollTop: 9999
+                }, "fast");
+                $(".sticker-contain").removeClass("open");
+                $(".toggle-sticker").removeClass("active");
+            }
+        });
+    }
+
 
 
 
     /*=====================
        25. Sticker
        ==========================*/
-    $('.sticker-contain ul li').on('click', function (e) {
-        var sticker = $(this).children().html();
-        $('<li class="replies"> <div class="media"> <div class="profile mr-4 bg-size" style="background-image: url("/assets/images/contact/1.jpg"); background-size: cover; background-position: center center;"></div><div class="media-body"> <div class="contact-name"> <h5>Alan josheph</h5> <h6>01:42 AM</h6> <ul class="msg-box"> <li> <h5>' + sticker + '</h5> </li></ul> </div></div></div></li>').appendTo($('.messages .chatappend'));
-        $('.chat-main .active .details h6').html('<span>You : </span>' + sticker);
-        var test = $(this).height();
-        $(".messages").animate({
-
-            scrollTop: $(document).height()
-        }, "fast");
-        $(".sticker-contain").removeClass("open");
-        $(".toggle-sticker").removeClass("active");
+    $('.sticker-contain ul li a').on('click', function (e) {
+        var sticker = $(this).children();
+        sendSticker(sticker);
     });
 
     // Toggle sticker
@@ -780,12 +806,85 @@
         $('.contact-poll-content').css('display', 'none');
     });
 
-    // Toggle poll
-    $('.contact-poll').on('click', function (e) {
-        $('.contact-poll-content').toggle();
+    // Toggle image
+    $('#sendImage').on('click', function (e) {
+        $(".sticker-contain").removeClass("open");
         $('.emojis-contain').removeClass("open");
         $(".toggle-emoji, .toggle-sticker").removeClass("active");
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.click();
+        input.onchange = e => {
+            var file = e.target.files[0];
+            if (!file.type || !file.type.includes('image/')) {
+                return;
+            }
+            if (file.size > 2 * 1024 * 1024) {
+                console.log('max file size is 2MB');
+                return;
+            }
+            var formData = new FormData();
+            formData.append("file", file, file.name);
+            $.when($.ajax({
+                type: "POST",
+                url: "/Conversations/UploadImage",
+                //xhr: function () {
+                //    var myXhr = $.ajaxSettings.xhr();
+                //    if (myXhr.upload) {
+                //        myXhr.upload.addEventListener('progress', progressHandling, false);
+                //    }
+                //    return myXhr;
+                //},
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+                data: formData
+            })).then(res => {
+                var data = {
+                    requestId: "d98346a5-7385-45ba-8944-b80ab307e446",
+                    toId: $('#toId').val(),
+                    type: "image",
+                    content: {
+                        url: res.url
+                    },
+                    chatSendOption: {
+                        forceSendCancelOrderWarning: false,
+                        complyCancelOrderWarning: false
+                    },
+                    source: "minichat"
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "/Conversations/SendMessage",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    cache: false,
+                    success: function (response) {
+                        $('<li class="replies"> <div class="media"> <div class="profile mr-4 bg-size" style="background-image: url(&quot;/assets/images/contact/1.jpg&quot;); background-size: cover; background-position: center center;"></div><div class="media-body"> <div class="contact-name"> <h5>Alan josheph</h5> <h6>01:42 AM</h6> <ul class="msg-box"> <li> <h5><img class="img-fluid" src="' + res.url + '" alt="sticker"></h5> </li></ul> </div></div></div></li>').appendTo($('.messages .chatappend'));
+                        $('.chat-main .active .details h6').html('<span>You : </span> sent an image');
+                        $(".messages").animate({
+                            scrollTop: 9999
+                        }, "fast");
+                    }
+                });
+            }).catch(err => console.log(err));
+        };
     });
+
+    //function progressHandling (event) {
+    //    var percent = 0;
+    //    var position = event.loaded || event.position;
+    //    var total = event.total;
+    //    var progress_bar_id = "#progress-wrp";
+    //    if (event.lengthComputable) {
+    //        percent = Math.ceil(position / total * 100);
+    //    }
+    //    // update progressbars classes so it fits your code
+    //    $(progress_bar_id + " .progress-bar").css("width", +percent + "%");
+    //    $(progress_bar_id + " .status").text(percent + "%");
+    //};
 
     // Outside click
     $(document).on('click', function (e) {
